@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cubi577bluj6b"]
+
+[ext_resource type="Script" uid="uid://xj83xa12bk21" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://drmxkl8iktmqh" path="res://projectile.tscn" id="2_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+
+[node name="Node2D" type="Node2D" unique_id=1510280852]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1939371199]
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_ig7tw")
+projectile_scene = ExtResource("2_0xm2m")
+projectile_speed = 800.0
+dash_speed = 600.0
+dash_time = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2078254403]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player" unique_id=208140606]
+modulate = Color(0.68662375, 0.6866236, 0.6866236, 1)
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=398727230]
