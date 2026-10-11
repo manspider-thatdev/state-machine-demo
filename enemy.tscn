@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://yeqq1phrveop"]
+
+[ext_resource type="Script" uid="uid://do1puqydkouvu" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://etw3yd8va8hm" path="res://enemy_projectile.tscn" id="2_4gyqm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gvtd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_m1i5j"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1241201326]
+collision_layer = 4
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_4gyqm")
+projectile_scene = ExtResource("2_4gyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1622916579]
+shape = SubResource("CircleShape2D_7gvtd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1069926612]
+modulate = Color(0.9098039, 0.23137255, 0.16862746, 1)
+scale = Vector2(20, 20)
+mesh = SubResource("SphereMesh_m1i5j")
